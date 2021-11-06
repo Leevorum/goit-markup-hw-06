@@ -177,7 +177,7 @@ img {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: var(--secondary-font-size);
-  line-height: 1.87;
+  line-height: 1.875;
   letter-spacing: 0.06em;
   cursor: pointer;
   background: var(--text-accent-color);
@@ -445,7 +445,176 @@ img {
   border-right: 1px solid #eeeeee;
   border-left: 1px solid #eeeeee;
 }
+/* modal */
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+  background: var(--mainbackground);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  fill: var(--background-accent);
+}
 
+.is-hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.modal-header {
+  margin-bottom: 30px;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+}
+.label-container {
+  position: relative;
+}
+.label-container + .label-container {
+  margin-top: 28px;
+}
+.modal-label {
+  position: absolute;
+  top: -18px;
+  font-family: 'Roboto';
+
+  font-size: 12px;
+  line-height: 1.1666;
+  letter-spacing: 0.01em;
+  color: #757575;
+}
+.modal-input {
+  width: 448px;
+  height: 40px;
+  padding-left: 42px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.area-comments {
+  width: 448px;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.area-comments:focus,
+.area-comments:hover {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid var(--background-accent);
+}
+.form-svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+.modal-input:focus,
+.modal-input:hover {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid var(--background-accent);
+}
+.modal-input:focus ~ .form-svg,
+.modal-input:hover ~ .form-svg {
+  cursor: pointer;
+  fill: var(--background-accent);
+}
+.license-container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.license-text {
+  margin-left: 15px;
+  font-family: 'Roboto';
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--text-secondary-color);
+}
+.license-link {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  -webkit-text-underline-position: under;
+  text-underline-position: under;
+}
+.modal-check {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.checkbox-svg {
+  position: absolute;
+  left: 9px;
+  pointer-events: none;
+
+}
+.modal-check:checked + .checkbox-svg{
+  background-image: url('../images/icon-check.svg');
+  background-origin: border-box;
+  background-size: contain;
+  pointer-events: none;
+  fill: var(--background-accent);
+}
+.modal-send{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 30px;
+  padding: 10px 55px 10px 56px;
+}
 /* footer */
 .footer-links {
   padding: 0;
@@ -503,20 +672,9 @@ img {
 .footer-line {
   align-items: baseline;
 }
-.backdrop {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 .sign {
   background-color: var(--background-accent);
 }
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.8);
 .sign-form {
   margin-left: 93px;
 }

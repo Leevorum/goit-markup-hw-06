@@ -330,12 +330,59 @@
           </ul>
         </div>
       </section>
+      <!-- MODAL WINDOW -->
       <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-          <button class="modal-btn" type="button" data-modal-close>
+          <button class="modal-close-btn" type="button" data-modal-close>
             <svg class="modal-close-svg" width="18" height="18">
               <use href="./images/icons.svg#icon-close"></use>
             </svg>
+          </button>
+          <h2 class="modal-header">Оставьте свои данные, мы вам перезвоним</h2>
+          <form name="modal-form">
+            <div class="label-container">
+              <label for="modal-name">
+                <span class="modal-label">Имя</span>
+              </label>
+              <input class="modal-input" type="text" name="name" id="modal-name" />
+              <svg class="form-svg" width="18px" height="18px">
+                <use href="./images/icons.svg#icon-person-black"></use>
+              </svg>
+            </div>
+            <div class="label-container">
+              <label for="modal-phone">
+                <span class="modal-label">Телефон</span>
+              </label>
+              <input class="modal-input" type="tel" name="phone" id="modal-phone" />
+              <svg class="form-svg" width="18px" height="18px">
+                <use href="./images/icons.svg#icon-phone-black"></use>
+              </svg>
+            </div>
+            <div class="label-container">
+              <label for="modal-mail">
+                <span class="modal-label">Почта</span>
+              </label>
+              <input class="modal-input" type="email" name="mail" id="modal-mail" />
+              <svg class="form-svg" width="18px" height="18px">
+                <use href="./images/icons.svg#icon-email-black"></use>
+              </svg>
+            </div>
+            <div class="label-container">
+              <label for="comment-modal"><span class="modal-label">Комментарий</span></label>
+              <textarea class="area-comments" name="comment" rows="3" id="comment-modal"></textarea>
+            </div>
+            <div class="license-container flex">
+              <input type="checkbox" name="modal-license" id="modal-license" class="modal-check" />
+              <svg class="checkbox-svg" width="16px" height="15px">
+                <use href="./images/icons.svg#icon-modal-checkbox"></use>
+              </svg>
+              <label for="modal-license">
+                <span class="license-text">Соглашаюсь с рассылкой и принимаю <a href="#" class="license-link">Условия договора</a></span>
+              </label>
+            </div>
+          </form>
+          <button type="submit" class="hero-btn modal-send">
+            <span class="">Отправить</span
           </button>
         </div>
       </div>
