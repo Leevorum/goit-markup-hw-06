@@ -377,12 +377,15 @@
                 <use href="./images/icons.svg#icon-modal-checkbox"></use>
               </svg>
               <label for="modal-license">
-                <span class="license-text">Соглашаюсь с рассылкой и принимаю <a href="#" class="license-link">Условия договора</a></span>
+                <span class="license-text"
+                  >Соглашаюсь с рассылкой и принимаю
+                  <a href="#" class="license-link">Условия договора</a></span
+                >
               </label>
             </div>
           </form>
           <button type="submit" class="hero-btn modal-send">
-            <span class="">Отправить</span
+            <span class="">Отправить</span>
           </button>
         </div>
       </div>
@@ -438,17 +441,15 @@
         <div class="sign-form">
           <p class="join-us">Подпишитесь на рассылку</p>
           <div class="sign-center">
-            <form name="sign" class="form">
-              <label for="">
-                <input class="sign-email" type="email" placeholder="E-mail" name="email" />
-              </label>
+            <form name="sign" class="form flex">
+              <input class="sign-email" type="email" placeholder="E-mail" name="email" />
+              <button type="submit" class="hero-btn sign-btn">
+                <span class="sign-btn-text">Подписаться</span
+                ><svg class="sign-svg" width="24px" height="24px">
+                  <use href="./images/icons.svg#icon-send"></use>
+                </svg>
+              </button>
             </form>
-            <button type="submit" class="hero-btn sign-btn">
-              <span class="sign-btn-text">Подписаться</span
-              ><svg class="sign-svg" width="24px" height="24px">
-                <use href="./images/icons.svg#icon-send"></use>
-              </svg>
-            </button>
           </div>
         </div>
       </div>
